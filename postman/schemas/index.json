@@ -1,0 +1,53 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "Simple API",
+    "version" : "0.0.0"
+  },
+  "servers" : [ {
+    "url" : "https://1yxze1yk1h.execute-api.us-east-1.amazonaws.com/{basePath}",
+    "variables" : {
+      "basePath" : {
+        "default" : ""
+      }
+    }
+  } ],
+  "tags" : [ {
+    "name" : "Time Zone"
+  }, {
+    "name" : "Elevation"
+  }, {
+    "name" : "Street View"
+  }, {
+    "name" : "Distance Matrix"
+  }, {
+    "name" : "Geolocation"
+  }, {
+    "name" : "Roads"
+  }, {
+    "name" : "Directions"
+  }, {
+    "name" : "Geocoding"
+  }, {
+    "name" : "Places"
+  } ],
+  "paths" : {
+    "/bar" : {
+      "get" : {
+        "responses" : {
+          "default" : {
+            "description" : "Default response for GET /bar"
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "payloadFormatVersion" : "1.0",
+          "type" : "http_proxy",
+          "httpMethod" : "ANY",
+          "uri" : "https://postman.com",
+          "connectionType" : "INTERNET"
+        }
+      }
+    }
+  },
+  "x-amazon-apigateway-importexport-version" : "1.0"
+}
